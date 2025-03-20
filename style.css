@@ -1,0 +1,145 @@
+body{
+    text-align: center;
+    margin: 50px;
+    color: black;
+    background-color: darkgoldenrod;
+
+
+}
+
+#header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 10px 0px;
+    font-size: 10px;
+    font-weight: bold;
+    width: 100%;
+    position: absolute;
+    
+
+}
+#ramen-menu{
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px 5px;
+    padding: 20px;
+     
+}
+#ramen-details{
+    background-color: beige;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 2px;
+
+
+}
+#ramen-details img{
+    width: 40px;
+    height: 60px;
+    border: 4px black;
+    padding: 0;
+}
+
+
+#ramen-details h2{
+    font-size: 16px;
+    margin-top: 10px;
+
+
+
+}
+#ramen-details h3{
+    font-size: 16px;
+    margin-top: 10px;
+
+
+
+
+}
+#ramen-details p{
+    display: flex;
+    margin-bottom: 20px;
+    text-align: center;
+
+
+
+
+}
+form{
+    background-color: darksalmon;
+    flex-direction:column;
+    display:flex;
+    margin: 20px auto;
+    border-radius: 5px;
+    margin: 100px auto 20px;
+    max-width: 700px;
+    box-shadow: 0px 3px 5px ;
+    justify-content: center;
+
+
+}
+
+form p{
+    display: flex;
+    margin-bottom: 2px;
+    text-align: center;
+    font-weight: bolder;
+
+
+
+}
+
+form input{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+    height: 25px;
+    justify-content: center;
+
+
+
+}
+form button{
+    margin-top: 14px;
+    color:black;
+    background-color: burlywood;
+    padding: 10px 10px;
+
+
+
+
+    
+}
+form h4{
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+
+.delete-Btn{
+    margin-top: 10px;
+    color: white;
+    background-color: brown;
+    padding: 20px 10px;
+    font-weight: bold;
+
+}
+
+.addBtn{
+    margin-top: 10px;
+    color: white;
+    background-color: brown;
+    padding: 20px 10px;
+    font-weight: bold;
+
+
+}
