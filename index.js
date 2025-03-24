@@ -1,3 +1,4 @@
+
 //Data
 const ramens = [
     { id: 1, name: "Shoyu Ramen", restaurant: "Ichiran", image: "images/Shoyu Ramen.jpeg", rating: 5, comment: "Delicious!" },
@@ -17,6 +18,7 @@ const ramens = [
         img.src = ramen.image;
         img.alt = ramen.name;
         img.className = "ramen-image";
+        img.dataset.id = ramen.id;
 
         img.addEventListener("click",()=> handleClick(ramens));
         ramenMenu.appendChild(img);
@@ -32,11 +34,11 @@ const ramens = [
 
 // Function to handle click events on ramen images
 function handleClick(ramen) {
-  const detailImage = document.querySelector("#ramen-detail img");
-  const name = document.querySelector("#ramen-detail .name");
-  const restaurant = document.querySelector("#ramen-detail .restaurant");
-  const rating = document.querySelector("#ramen-detail .rating");
-  const comment = document.querySelector("#ramen-detail .comment");
+  const detailImage = document.querySelector("#ramen-details img");
+  const name = document.querySelector("#ramen-details .name");
+  const restaurant = document.querySelector("#ramen-details .restaurant");
+  const rating = document.querySelector("#ramen-details .rating");
+  const comment = document.querySelector("#ramen-details .comment");
 
   // Update the ramen-detail div 
   detailImage.src = ramen.image;
@@ -62,3 +64,32 @@ function handleClick(ramen) {
   const deleteButton = document.getElementById("delete-ramen");
   deleteButton.onclick = () => deleteRamen(ramen);
 }
+
+function deleteRamen(ramen) {
+  const index = ramens.findIndex(r => r.id === ramen.id);
+  if (index !== -1) {
+      ramens.splice(index, 1); 
+      const ramenMenu = document.getElementById("ramen-menu");
+      ramenMenu.innerHTML = ""; 
+      displayRamens(); 
+      if (ramens.length > 0) {
+          handleClick(ramens[0]); 
+      } else {
+          // 
+          const detailImage = document.querySelector("#ramen-detail img");
+          const name = document.querySelector("#ramen-detail .name");
+          const restaurant = document.querySelector("#ramen-detail .restaurant");
+          const rating = document.querySelector("#ramen-detail .rating");
+          const comment = document.querySelector("#ramen-detail .comment");
+
+          detailImage.src = "";
+          detailImage.alt = "";
+          name.textContent = "";
+          restaurant.textContent = "";
+          rating.textContent = "";
+          comment.textContent = "";
+      }
+  }
+}
+
+
