@@ -92,4 +92,53 @@ function deleteRamen(ramen) {
   }
 }
 
+function addSubmitListener() {
+  const form = document.getElementById("new-Ramen");
+
+  form.addEventListener("submit", (e) => {
+      e.preventDefault(); 
+
+
+      const name = document.getElementById("new-name").value;
+      const restaurant = document.getElementById("new-restaurant").value;
+      const image = document.getElementById("new-image").value;
+      const rating = document.getElementById("new-rating").value;
+      const comment = document.getElementById("new-comment").value;
+
+      // new ramen object 
+      const newRamen = {
+          id: ramens.length + 1,
+          name,
+          restaurant,
+          image,
+          rating,
+          comment
+      };
+      // Adding the new ramen to the ramens array
+      ramens.push(newRamen);
+
+      
+      const ramenMenu = document.getElementById("ramen-menu");
+      const img = document.createElement("img");
+      img.src = newRamen.image;
+      img.alt = newRamen.name;
+      img.dataset.id = newRamen.id;
+      img.className = "ramen-image";
+
+      
+      img.addEventListener("click", () => handleClick(newRamen));
+
+      ramenMenu.appendChild(img);
+
+      form.reset();
+    });
+}
+
+function main() {
+  displayRamens();
+  addSubmitListener();
+}
+
+
+document.addEventListener("DOMContentLoaded", main);
 
